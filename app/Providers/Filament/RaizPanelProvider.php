@@ -19,6 +19,7 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
+use HusamTariq\FilamentDatabaseSchedule\FilamentDatabaseSchedulePlugin;
 
 class RaizPanelProvider extends PanelProvider
 {
@@ -59,7 +60,8 @@ class RaizPanelProvider extends PanelProvider
             ])
             ->plugins([
                 FilamentSpatieRolesPermissionsPlugin::make(),
-                FilamentBackgroundsPlugin::make()->showAttribution(false)
+                FilamentBackgroundsPlugin::make()->showAttribution(false),
+                FilamentDatabaseSchedulePlugin::make()
             ]);
     }
 }
